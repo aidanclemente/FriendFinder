@@ -1,0 +1,28 @@
+{
+  "name": "friendfinder",
+  "version": "1.0.0",
+  "description": "full_stack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/aidanclemente/FriendFinder.git"
+  },
+  "keywords": [
+    "friendfinder",
+    "fullstack"
+  ],
+  "author": "Aidan Clemente",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aidanclemente/FriendFinder/issues"
+  },
+  "homepage": "https://github.com/aidanclemente/FriendFinder#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "path": "^0.12.7"
+  }
+}
