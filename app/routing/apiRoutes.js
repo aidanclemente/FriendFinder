@@ -5,8 +5,23 @@
 
 var friendsData = require ("../data/friends.js");
 
+// List Friends Data
 module.exports = function (app) {
     app.get("/api/friends", function(req, res) {
         res.json(friendsData);
     });
-}
+
+    // Add New Friend
+    app.post("/api/friends", function(req,res) {
+
+        console.log(req.body);
+        var newFriend = req.body;
+
+        console.log("user's Info: " + JSON.stringify(newFriend));
+
+        var newFriendResponses = newFriend.scores;
+
+        console.log("user's Answers: " + newFriendResponses)
+    })
+
+};
