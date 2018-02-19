@@ -21,26 +21,28 @@
     </head>
     <body>
         <div class="container">
-            <h1> Survey Questions</h1>
+            <h1 id="surveyHeader"> Survey Questions</h1>
             <hr>
             <form>
                 <h2>About You</h2>
                 <div class="form-group">
                     <label for="user-name"><h5>Name (Required)</h5></label>
-                    <input class="form-control" type="text" id="userName">
+                    <input class="form-control" type="text" id="userName" required>
                 </div>
                 <div class="form-group">
                     <label for="user-picture"><h5>Link to Photo Image (Required)</h5></label>
-                    <input class="form-control" type="text" id="userPicture">
+                    <input class="form-control" type="text" id="userPicture" required>
                 </div>
                 <hr>
 <!-- For the questions: I should have an array of questions and a for loop to loop through the questions and dynamically create everything and append to the html -->
+
+<!-- Need logic for an alert, if any of the values = "" alert "Please fill out all fields before submitting!" -->
 
                 <!-- Question 1-->
                 <div class="form-group">
                     <h4>Question 1</h4>
                     <label for="question1">You like animals.</label>
-                    <select class="form-control chosen-select question" id="q1">
+                    <select required class="form-control chosen-select question" id="q1">
                         <option value="">Select and Option</option>
                         <option value="1">1 (Strongly Disagree)</option>
                         <option value="2">2</option>
@@ -189,7 +191,25 @@
                 <a href="https://github.com/aidanclemente/FriendFinder">GitHub Repo</a>
             </footer>
         </div>
+        <style>
+            #surveyHeader {
+                margin-top: 20px;
+                font-size: 50px;
+            }
 
+            #formSubmit {
+                width: 100%;
+                font-size: 20px;
+            }
+
+            h5 {
+                font-weight: normal;
+            }
+
+            .question{
+                width: 200px;
+            }
+        </style>
     <!-- I don't know if I need these script tags -->
         <script type="text/javascript" src="run.js"></script>
         <script type="text/javascript" src="server.js"></script>

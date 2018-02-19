@@ -1,6 +1,10 @@
-#mainHead {
+/* #mainHead {
     font-size: 60px;
-}
+} */
+
+/* #survey {
+    margin-top: 25px;
+} */
 
 #formSubmit {
     width: 100%;
@@ -15,6 +19,3 @@ h5 {
     width: 200px;
 }
 
-#survey {
-    margin-top: 25px;
-}
