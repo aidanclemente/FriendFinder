@@ -9,7 +9,8 @@
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <!-- jQuery -->
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script
+        src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
         <!-- cloudflare from bootstrap site -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <!-- Bootstrap js -->
@@ -21,7 +22,7 @@
         <div class="container">
             <h1 id="surveyHeader"> Survey Questions</h1>
             <hr>
-            <form>
+            <form name="surveyForm">
                 <h2>About You</h2>
                 <div class="form-group">
                     <label for="user-name"><h5>Name (Required)</h5></label>
@@ -206,5 +207,44 @@
                 width: 200px;
             }
         </style>
+        <script>
+
+            // Need to check to make sure that all the questions have been answered before allowing them to continue
+            // Need to add a form validation function to check all questions have a value
+            $("#formSubmit").on("click", function(event) {
+                event.preventDefault();
+
+                var newFriendData = {
+                    name: $("#userName").val(),
+                    photo: $("#userPicture").val(),
+                    scores: [
+                        $("#q1").val(),
+                        $("#q2").val(),
+                        $("#q3").val(),
+                        $("#q4").val(),
+                        $("#q5").val(),
+                        $("#q6").val(),
+                        $("#q7").val(),
+                        $("#q8").val(),
+                        $("#q9").val(),
+                        $("#q10").val()
+                    ]
+                };
+            
+            console.log(newFriendData);
+
+        // Throwing error: $.post is not a function
+
+        // sending newFriendData to the server with the request
+        // function(data) data - contains the resulting data from the request
+            $.post("/api/friends", newFriendData, function(data) {
+                // This is not being triggered...
+                 if (data) {
+                     console.log("THIS RAN-- POST IN SURVEY.HTML");
+                     alert("this ran!");
+                 }
+            });
+        });
+        </script>
     </body>
 </html>
