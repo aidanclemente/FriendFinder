@@ -55,11 +55,11 @@ module.exports = function (app) {
             // reseting the diffCounter at the start of each friend
             diffCounter = 0;
 
-            for (let k = 0; k < friendsData[i].scores.length; k++) {
+            for (var k = 0; k < friendsData[i].scores.length; k++) {
                 
                 //here we are going through the scores to find the difference
             
-               diffCounter += Math.abs(parseInt(friendsData[i].scores[k]) - parseInt(newFriendResponses[i]))
+               diffCounter += Math.abs(parseInt(friendsData[i].scores[k]) - parseInt(newFriendResponses[k]))
                 console.log("from the for loop: difference counter " + diffCounter);
 
                 // need to save the diffCounter in bestMatch difference
