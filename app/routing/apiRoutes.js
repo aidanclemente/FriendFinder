@@ -50,13 +50,13 @@ module.exports = function (app) {
             //set bestMatch difference to 0
         for (var i = 0; i < friendsData.length; i++) {
             // we run through all of the friends in the array 
+            console.log("Friend Checking: " + friendsData[i].name);
 
             // reseting the diffCounter at the start of each friend
             diffCounter = 0;
 
             for (let k = 0; k < friendsData[i].scores.length; k++) {
                 
-                console.log("Friend Checking: " + friendsData[i].name);
                 //here we are going through the scores to find the difference
             
                diffCounter += Math.abs(parseInt(friendsData[i].scores[k]) - parseInt(newFriendResponses[i]))
@@ -65,7 +65,8 @@ module.exports = function (app) {
                 // need to save the diffCounter in bestMatch difference
                 // then reset the diffCounter = 0 before starting the next friend
                 // if the bestMatch difference is less than the diffCounter, then replace the bestMatch information of the
-
+                }
+                
                 if (bestMatch.bestMatchDifference > diffCounter) {
 
                     // Then replace the name, photo and difference with the current friend
@@ -75,7 +76,7 @@ module.exports = function (app) {
 
                     console.log("This is the current best match " + JSON.stringify(bestMatch));
                 }
-            }
+            
             
         }
         // For loop to loop through all of the friends
@@ -90,7 +91,7 @@ module.exports = function (app) {
             // send the user a modal with the picture and name of the best match
 
             // *** NEED TO LOOK INTO MODALS!!! ***
-
+        console.log("The is the new best friend: " + JSON.stringify(bestMatch));
                 //This is working
                 (friendsData).push(newFriend);
 
