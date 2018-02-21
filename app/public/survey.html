@@ -33,9 +33,6 @@
                     <input class="form-control" type="text" id="userPicture" required>
                 </div>
                 <hr>
-<!-- For the questions: I should have an array of questions and a for loop to loop through the questions and dynamically create everything and append to the html -->
-
-<!-- Need logic for an alert, if any of the values = "" alert "Please fill out all fields before submitting!" -->
 
                 <!-- Question 1-->
                 <div class="form-group">
@@ -188,13 +185,34 @@
                 <a href="https://github.com/aidanclemente/FriendFinder">GitHub Repo</a>
             </footer>
         </div>
+
+        <!-- Modal For Form Control-->      
+        <div class="modal" id="formControlModal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Required Fields</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <p>You have left some questions unanswered.<br>
+                        Please go back and answer all of the questions.</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
  
-        <!-- Modal -->
+        <!-- Modal For Best Match-->
         <div class="modal fade" id="bestMatchModal" tabindex="-1" role="dialog" aria-labelledby="bestMatchModalTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                <h5 class="modal-title" id="bestMatchModalHeader">Best Match</h5>
+                <h2 class="modal-title text-center" id="bestMatchModalHeader">Your New BFF!</h2>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -233,41 +251,57 @@
 
         <script>
 
-            // Need to check to make sure that all the questions have been answered before allowing them to continue
-            // Need to add a form validation function to check all questions have a value
             $("#formSubmit").on("click", function(event) {
                 event.preventDefault();
 
-                var newFriendData = {
-                    name: $("#userName").val(),
-                    photo: $("#userPicture").val(),
-                    scores: [
-                        $("#q1").val(),
-                        $("#q2").val(),
-                        $("#q3").val(),
-                        $("#q4").val(),
-                        $("#q5").val(),
-                        $("#q6").val(),
-                        $("#q7").val(),
-                        $("#q8").val(),
-                        $("#q9").val(),
-                        $("#q10").val()
-                    ]
+                function formValidation() {
+
+                    var isValid = true;
+
+                    $(".form-control").each(function() {
+                        if($(this).val() === "") {
+                            isValid = false;
+                        }
+                    });
+
+                    return isValid;
                 };
 
-                // Sending the user information to apiRoutes.js to match with friend, then it sends back the best match
-                // function(data) data - contains bestMatch information
-                $.post("/api/friends", newFriendData, function(data) {
+                if (formValidation()) {
 
-                    // If statement is able to run because res.json(bestMatch); in the app.post request in apiRoutes.js, which sent back the best match based on the user's answers
-                    if (data) {
+                    var newFriendData = {
+                        name: $("#userName").val(),
+                        photo: $("#userPicture").val(),
+                        scores: [
+                            $("#q1").val(),
+                            $("#q2").val(),
+                            $("#q3").val(),
+                            $("#q4").val(),
+                            $("#q5").val(),
+                            $("#q6").val(),
+                            $("#q7").val(),
+                            $("#q8").val(),
+                            $("#q9").val(),
+                            $("#q10").val()
+                        ]
+                    };
 
-                        $("#bestMatchName").text(data.name);
-                        $("#bestMatchPhoto").attr("src", data.photo);
+                    // Sending the user information to apiRoutes.js to match with friend, then it sends back the best match
+                    // function(data) data - contains bestMatch information
+                    $.post("/api/friends", newFriendData, function(data) {
 
-                        $("#bestMatchModal").modal("toggle");
-                    }
-                });
+                        // If statement is able to run because res.json(bestMatch); in the app.post request in apiRoutes.js, which sent back the best match based on the user's answers
+                        if (data) {
+
+                            $("#bestMatchName").text(data.name);
+                            $("#bestMatchPhoto").attr("src", data.photo);
+
+                            $("#bestMatchModal").modal("toggle");
+                        }
+                    });
+                } else {
+                    $("#formControlModal").modal("toggle");
+                }
             });
         </script>
     </body>
