@@ -2,7 +2,7 @@
 var friendsArray = [
   {
     "name":"Ahmed",
-    "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    "photo":"https://www.rd.com/wp-content/uploads/2016/05/01-smart-animals-racoon.jpg",
     "scores":[
         5,
         1,
@@ -32,7 +32,7 @@ var friendsArray = [
       ]
   },{
     "name":"Ponyella",
-    "photo":"2wCEAAkGBxMTEhUTExMVFRUXGBgXGBcYGRsdHhoeGx0XGBgaGhoYHSggGBolHRcXIjEiJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGhAQGy0lHyUtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf",
+    "photo":"https://www.nationalgeographic.com/content/dam/photography/rights-exempt/best-of-photo-of-the-day/2017/animals/01_pod-best-animals.jpg",
     "scores":[
         1,
         1,
@@ -135,7 +135,8 @@ var friendsArray = [
         4,
         3
       ]
-  },{
+  },
+  {
     "name":"Fluffy",
     "photo":"http://i.telegraph.co.uk/multimedia/archive/03577/potd-frog_3577394k.jpg",
     "scores":[

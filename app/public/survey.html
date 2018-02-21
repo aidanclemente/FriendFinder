@@ -178,7 +178,7 @@
                     </div>
                                         
                 <!-- Submit Button for Form -->
-                <button type="submit" class="btn btn-primary" id="formSubmit"><i class="far fa-check-circle"></i> Submit</button>
+                <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#bestMatchModal" id="formSubmit"><i class="far fa-check-circle"></i> Submit</button>
                 <hr>
 
             </form>
@@ -188,6 +188,29 @@
                 <a href="https://github.com/aidanclemente/FriendFinder">GitHub Repo</a>
             </footer>
         </div>
+ 
+        <!-- Modal -->
+        <div class="modal fade" id="bestMatchModal" tabindex="-1" role="dialog" aria-labelledby="bestMatchModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="bestMatchModalHeader">Best Match</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                   <!-- Need to grab the best match photo and name from apiRoutes.js -->
+                   <h3 id="bestMatchName">Best Match Name</h3>
+                   <img id="bestMatchPhoto" style="width: 100%" src="" alt="Photo of the Best Matched Friend">                    
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
         <style>
             #surveyHeader {
                 margin-top: 20px;
@@ -207,6 +230,7 @@
                 width: 200px;
             }
         </style>
+
         <script>
 
             // Need to check to make sure that all the questions have been answered before allowing them to continue
@@ -231,17 +255,24 @@
                     ]
                 };
             
-            console.log(newFriendData);
-
-        // Throwing error: $.post is not a function
+            // Printing on browser console as : [object object]
+            console.log("New friends data coming from survey.html: " + JSON.stringify(newFriendData));
 
         // sending newFriendData to the server with the request
+        // Sending the user information to apiRoutes.js to match with friend, then it sends back the best match
         // function(data) data - contains the resulting data from the request
             $.post("/api/friends", newFriendData, function(data) {
-                // This is not being triggered...
+                // This is able to run because res.json(bestMatch); in the app.post request in apiRoutes.js, which sent back the best match based on the user's answers
                  if (data) {
                      console.log("THIS RAN-- POST IN SURVEY.HTML");
                      alert("this ran!");
+                    
+                     console.log("Best Match Object: " + JSON.stringify(data));
+
+                    $("#bestMatchName").text(data.name);
+                    $("#bestMatchPhoto").attr("src", data.photo);
+                     //Here is where we set the picture in the modal to bestMatch.photo
+                     //and the bestMatch.name
                  }
             });
         });
