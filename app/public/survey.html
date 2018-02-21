@@ -223,7 +223,7 @@
                    <img id="bestMatchPhoto" style="width: 100%" src="" alt="Photo of the Best Matched Friend">                    
                 </div>
                 <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" id="doItAgain" class="btn btn-secondary" data-dismiss="modal">Fill Out Survey Again</button>
                 </div>
             </div>
             </div>
@@ -303,6 +303,11 @@
                     $("#formControlModal").modal("toggle");
                 }
             });
+
+            $("#doItAgain").on("click", function(event) {
+                event.preventDefault();
+                location.reload();
+            })
         </script>
     </body>
 </html>
