@@ -311,9 +311,12 @@
                             $("#bestMatchName").text(data.name);
                             $("#bestMatchPhoto").attr("src", data.photo);
 
-                            $("#bestMatchModal").modal("show");
+                          
                         }
                     });
+
+                    $("#bestMatchModal").modal("show");
+
                 } else {
                     $("#formControlModal").modal("show");
                 }
