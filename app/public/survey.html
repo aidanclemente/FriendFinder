@@ -6,17 +6,27 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Friend Finder</title>
 
+                <!-- Twitter Bootstrap CDN -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <!-- Font Awesome CDN -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+        <!-- JQuery -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
         <!-- Bootstrap -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
         <!-- jQuery -->
-        <script
-        src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+        <!-- <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script> -->
         <!-- cloudflare from bootstrap site -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
         <!-- Bootstrap js -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
         <!-- Fontawesome -->
-        <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+        <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script> -->
     </head>
     <body>
         <div class="container">
@@ -218,9 +228,8 @@
                 </button>
                 </div>
                 <div class="modal-body">
-
-                   <h3 id="bestMatchName">Best Match Name</h3>
-                   <img id="bestMatchPhoto" style="width: 100%" src="" alt="Photo of the Best Matched Friend">                    
+                    <img id="bestMatchPhoto" style="width: 100%" src="" alt="Photo of the Best Matched Friend">
+                    <h3 id="bestMatchName">Best Match Name</h3>                       
                 </div>
                 <div class="modal-footer">
                 <button type="button" id="doItAgain" class="btn btn-secondary" data-dismiss="modal">Fill Out Survey Again</button>
@@ -310,15 +319,13 @@
 
                             $("#bestMatchName").text(data.name);
                             $("#bestMatchPhoto").attr("src", data.photo);
-
+                            $("#bestMatchModal").modal("toggle");
                           
                         }
                     });
 
-                    $("#bestMatchModal").modal("show");
-
                 } else {
-                    $("#formControlModal").modal("show");
+                    $("#formControlModal").modal("toggle");
                 }
             });
 
