@@ -228,7 +228,7 @@
                 </div>
                 <div class="modal-body">
                     <img id="bestMatchPhoto" style="width: 100%" src="" alt="Photo of the Best Matched Friend">
-                    <h3 id="bestMatchName">Best Match Name</h3>                       
+                    <h3 id="bestMatchName">Hello, friend! My name is </h3>                       
                 </div>
                 <div class="modal-footer">
                 <button type="button" id="doItAgain" class="btn btn-secondary" data-dismiss="modal">Fill Out Survey Again</button>
@@ -321,7 +321,7 @@
                         // If statement is able to run because res.json(bestMatch); in the app.post request in apiRoutes.js, which sent back the best match based on the user's answers
                         if (data) {
 
-                            $("#bestMatchName").text(data.name);
+                            $("#bestMatchName").text("Hello, " + newFriendData.name + "! My name is " + data.name + ".");
                             $("#bestMatchPhoto").attr("src", data.photo);
                             $("#bestMatchModal").modal("toggle");
                           

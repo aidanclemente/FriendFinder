@@ -24,13 +24,12 @@ module.exports = function (app) {
         };
 
         for (var i = 0; i < friendsData.length; i++) {
-            console.log(friendsData[i].name);
+
             var diffCounter = 0;
 
             for (var k = 0; k < friendsData[i].scores.length; k++) {
             
-               diffCounter += Math.abs(parseInt(friendsData[i].scores[k]) - parseInt(newFriendResponses[k]))
-                console.log("from the for loop: difference counter " + diffCounter);
+               diffCounter += Math.abs(parseInt(friendsData[i].scores[k]) - parseInt(newFriendResponses[k]))              
 
             }
                 
