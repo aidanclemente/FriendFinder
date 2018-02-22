@@ -321,7 +321,7 @@
                         // If statement is able to run because res.json(bestMatch); in the app.post request in apiRoutes.js, which sent back the best match based on the user's answers
                         if (data) {
 
-                            $("#bestMatchName").text("Hello, " + newFriendData.name + "! My name is " + data.name + ".");
+                            $("#bestMatchName").text("Hello, " + newFriendData.name + "! My name is " + data.name + "!");
                             $("#bestMatchPhoto").attr("src", data.photo);
                             $("#bestMatchModal").modal("toggle");
                           
