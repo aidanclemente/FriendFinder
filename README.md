@@ -1,12 +1,13 @@
 # Friend Finder Application
 
+## Description:
+*Friend Finder* is a full-stack site and meant to imitate a simple dating application. The user answers a short, 10 question survey. Based on the answers provided, the user is returned the name and picture of the closest matching friend in the database. The closest matching friend has the lowest, total difference between question responses. 
 
-
+To view homework instructions [click here](https://github.com/aidanclemente/FriendFinder/blob/master/homework_instructions.md)
 
 ## Instructions: 
 
-*Friend Finder is deployed to Heroku! Click [here](https://fierce-mountain-37682.herokuapp.com/) to
- find a friend with the greatest compatibility!
+*Friend Finder* is deployed to Heroku! [Click Here](https://fierce-mountain-37682.herokuapp.com/) to demo the application and find a friend with the greatest compatibility!
 
 ## To Run Locally:
 

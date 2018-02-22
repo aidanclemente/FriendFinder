@@ -77,7 +77,7 @@ var friendsArray = [
       ]
   },{
     "name":"Grizzabella",
-    "photo":"https://scontent.ftpa1-2.fna.fbcdn.net/v/t1.0-9/317350_10101514073955544_480480597_n.jpg?oh=3a591a7bbd616b94d0ee912ce7e4b6a9&oe=5B0EF4AD",
+    "photo":"https://scontent.ftpa1-1.fna.fbcdn.net/v/t1.0-9/10399299_660749306024_8130_n.jpg?oh=162dcb7e4a1c896d7ca67658d3668318&oe=5B0E8F31",
     "scores":[
         1,
         3,
@@ -92,7 +92,7 @@ var friendsArray = [
       ]
   },{
     "name":"Baby Elfie",
-    "photo":"https://shaferpower.files.wordpress.com/2012/12/elf-on-the-shelf1.jpg",
+    "photo":"https://www.gannett-cdn.com/-mm-/14141892bf67e4b3a115e572714525d874db276c/c=0-139-719-680&r=x408&c=540x405/local/-/media/2017/12/04/INGroup/Indianapolis/636479954656045979-elfontheshelf-showsprinkles.jpg",
     "scores":[
         2,
         1,
@@ -107,7 +107,7 @@ var friendsArray = [
       ]
   },{
     "name":"Numbers",
-    "photo":"https://www.google.com/search?rlz=1C1XYJR_enUS764US765&biw=1155&bih=582&tbm=isch&sa=1&ei=i9CKWsfUIsKBzwLx2ZQY&q=pictures&oq=pictures&gs_l=psy-ab.3...112231.112390.0.112590.2.2.0.0.0.0.0.0..0.0....0...1c.1.64.psy-ab..2.0.0....0.MznRRc-6DHs#imgrc=j-U8au6L6da10M:",
+    "photo":"http://i.telegraph.co.uk/multimedia/archive/03578/chip--wide_3578582k.jpg",
     "scores":[
         5,
         4,
@@ -230,18 +230,3 @@ var friendsArray = [
 ];
 
 module.exports = friendsArray;
-
-
-// Determine the user's most compatible friend using the following as a guide:
-
-// Convert each user's results into a simple array of numbers (ex: [5, 1, 4, 4, 5, 1, 2, 5, 4, 1]).
-// With that done, compare the difference between current user's scores against those from other users, question by question. Add up the differences to calculate the totalDifference.
-// Example:
-// User 1: [5, 1, 4, 4, 5, 1, 2, 5, 4, 1]
-// User 2: [3, 2, 6, 4, 5, 1, 2, 5, 4, 1]
-// Total Difference: 2 + 1 + 2 = 5
-// Remember to use the absolute value of the differences. Put another way: no negative solutions! Your app should calculate both 5-3 and 3-5 as 2, and so on.
-// The closest match will be the user with the least amount of difference.
-// Once you've found the current user's most compatible friend, display the result as a modal pop-up.
-
-// The modal should display both the name and picture of the closest match.

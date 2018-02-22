@@ -12,7 +12,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </head>
 <body>
-    <div class="container text-center">
+    <div class="container-fluid text-center">
         <div class="jumbotron">
             <h1 id="mainHead"><i class="fab fa-facebook"></i> Friend Finder</h1>
             <hr>
@@ -23,17 +23,37 @@
             </a>
         </div>
         <footer class="text-left">
-            <a href="/api/friends">API Friends List</a> | 
-            <a href="https://github.com/aidanclemente/FriendFinder">GitHub Repo</a>
+            <a href="/api/friends">API Friends List </a>  |  
+            <a href="https://github.com/aidanclemente/FriendFinder"> GitHub Repo</a>
         </footer>
     </div>
     <style>
+        body {
+            background-color: #FAFAEF;
+        }
+
+        .jumbotron {
+            background-color: #E0DCFF;
+        }
+
         #mainHead {
             font-size: 60px;
         }
 
         #survey {
             margin-top: 25px;
+            background-color: #7464F0;
+            border-color: #655CAA;
+        }
+
+        #survey:hover {
+            background-color: #CD5CDF;
+            border-color: #E09FEA;
+        }
+        
+        footer {
+            position: fixed;
+            bottom: 0;
         }
     </style>
 </body>
