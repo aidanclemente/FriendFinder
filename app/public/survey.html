@@ -8,10 +8,9 @@
 
                 <!-- Twitter Bootstrap CDN -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-        <!-- Font Awesome CDN -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
         <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
         <!-- JQuery -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <!-- Latest compiled and minified JavaScript -->
@@ -26,7 +25,7 @@
         <!-- Bootstrap js -->
         <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
         <!-- Fontawesome -->
-        <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script> -->
+        <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     </head>
     <body>
         <div class="container">
@@ -35,11 +34,11 @@
             <form name="surveyForm">
                 <h2>About You</h2>
                 <div class="form-group">
-                    <label for="user-name"><h5>Name (Required)</h5></label>
+                    <label for="user-name"><h4>Name (Required)</h4></label>
                     <input class="form-control" type="text" id="userName" required>
                 </div>
                 <div class="form-group">
-                    <label for="user-picture"><h5>Link to Photo Image (Required)</h5></label>
+                    <label for="user-picture"><h4>Link to Photo Image (Required)</h4></label>
                     <input class="form-control" type="text" id="userPicture" required>
                 </div>
                 <hr>
@@ -185,7 +184,7 @@
                     </div>
                                         
                 <!-- Submit Button for Form -->
-                <button type="submit" class="btn btn-primary" id="formSubmit"><i class="far fa-check-circle"></i> Submit</button>
+                <button type="submit" class="btn btn-primary" id="formSubmit">Submit &nbsp &nbsp <i class="far fa-paper-plane"></i></button>
                 <hr>
 
             </form>
@@ -201,7 +200,7 @@
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title">Required Fields</h5>
+                      <h4 class="modal-title">Required Fields</h4>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
@@ -240,7 +239,12 @@
 
         <style>
             body {
+                font-family: 'Acme', sans-serif;
                 background-color: #FAFAEF;
+            }
+
+            a {
+                padding-bottom: 20px;
             }
 
             label {
@@ -264,7 +268,7 @@
                 border-color: #E09FEA;
             }
 
-            h5 {
+            h4 {
                 font-weight: normal;
             }
 
