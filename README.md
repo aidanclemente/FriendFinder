@@ -7,7 +7,7 @@ To view homework instructions [click here](https://github.com/aidanclemente/Frie
 
 ## Instructions: 
 
-*Friend Finder* is deployed to Heroku! [Click Here](https://fierce-mountain-37682.herokuapp.com/) to demo the application and find a friend with the greatest compatibility!
+*Friend Finder* is deployed to Heroku! Visit: [https://fierce-mountain-37682.herokuapp.com/](https://fierce-mountain-37682.herokuapp.com/) to demo the application and find a friend with the greatest compatibility!
 
 ## To Run Locally:
 
